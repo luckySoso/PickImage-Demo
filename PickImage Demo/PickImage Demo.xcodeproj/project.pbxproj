@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CA433471CEDAF1B00077481 /* pickImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA433461CEDAF1B00077481 /* pickImageView.m */; };
+		9CAEBB041CECA19E00A2714B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB031CECA19E00A2714B /* main.m */; };
+		9CAEBB071CECA19E00A2714B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB061CECA19E00A2714B /* AppDelegate.m */; };
+		9CAEBB0A1CECA19E00A2714B /* XHBackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB091CECA19E00A2714B /* XHBackgroundViewController.m */; };
+		9CAEBB0F1CECA19E00A2714B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CAEBB0E1CECA19E00A2714B /* Assets.xcassets */; };
+		9CAEBB1D1CECA19E00A2714B /* PickImage_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB1C1CECA19E00A2714B /* PickImage_DemoTests.m */; };
+		9CAEBB281CECA19E00A2714B /* PickImage_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB271CECA19E00A2714B /* PickImage_DemoUITests.m */; };
+		9CAEBB3C1CECA63600A2714B /* SXPickPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB391CECA63600A2714B /* SXPickPhoto.m */; };
+		9CAEBB3D1CECA63600A2714B /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB3B1CECA63600A2714B /* UIImage+FixOrientation.m */; };
+		9CAEBB401CECB2A600A2714B /* UIView+XHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB3F1CECB2A600A2714B /* UIView+XHExtension.m */; };
+		9CCEF0D51CEE026600B874A6 /* XHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEF0D41CEE026600B874A6 /* XHNavigationController.m */; };
+		9CCEF0D81CEE077E00B874A6 /* XHAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEF0D71CEE077E00B874A6 /* XHAlbumListViewController.m */; };
+		9CCEF0DC1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEF0DB1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m */; };
+		9CCEF0DF1CEE0EC900B874A6 /* XHAlbumListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEF0DE1CEE0EC900B874A6 /* XHAlbumListViewCell.m */; };
+		9CCEF0E21CEE12DA00B874A6 /* XHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEF0E11CEE12DA00B874A6 /* XHPhotoViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CAEBB191CECA19E00A2714B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CAEBAF71CECA19E00A2714B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CAEBAFE1CECA19E00A2714B;
+			remoteInfo = "PickImage Demo";
+		};
+		9CAEBB241CECA19E00A2714B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CAEBAF71CECA19E00A2714B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CAEBAFE1CECA19E00A2714B;
+			remoteInfo = "PickImage Demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9CA433451CEDAF1B00077481 /* pickImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickImageView.h; sourceTree = "<group>"; };
+		9CA433461CEDAF1B00077481 /* pickImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickImageView.m; sourceTree = "<group>"; };
+		9CAEBAFF1CECA19E00A2714B /* PickImage Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PickImage Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAEBB031CECA19E00A2714B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CAEBB051CECA19E00A2714B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9CAEBB061CECA19E00A2714B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9CAEBB081CECA19E00A2714B /* XHBackgroundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHBackgroundViewController.h; sourceTree = "<group>"; };
+		9CAEBB091CECA19E00A2714B /* XHBackgroundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHBackgroundViewController.m; sourceTree = "<group>"; };
+		9CAEBB0E1CECA19E00A2714B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9CAEBB131CECA19E00A2714B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CAEBB181CECA19E00A2714B /* PickImage DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PickImage DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAEBB1C1CECA19E00A2714B /* PickImage_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickImage_DemoTests.m; sourceTree = "<group>"; };
+		9CAEBB1E1CECA19E00A2714B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CAEBB231CECA19E00A2714B /* PickImage DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PickImage DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAEBB271CECA19E00A2714B /* PickImage_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickImage_DemoUITests.m; sourceTree = "<group>"; };
+		9CAEBB291CECA19E00A2714B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CAEBB381CECA63600A2714B /* SXPickPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPickPhoto.h; sourceTree = "<group>"; };
+		9CAEBB391CECA63600A2714B /* SXPickPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPickPhoto.m; sourceTree = "<group>"; };
+		9CAEBB3A1CECA63600A2714B /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		9CAEBB3B1CECA63600A2714B /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		9CAEBB3E1CECB2A600A2714B /* UIView+XHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XHExtension.h"; sourceTree = "<group>"; };
+		9CAEBB3F1CECB2A600A2714B /* UIView+XHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XHExtension.m"; sourceTree = "<group>"; };
+		9CCEF0D31CEE026600B874A6 /* XHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHNavigationController.h; sourceTree = "<group>"; };
+		9CCEF0D41CEE026600B874A6 /* XHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHNavigationController.m; sourceTree = "<group>"; };
+		9CCEF0D61CEE077E00B874A6 /* XHAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumListViewController.h; sourceTree = "<group>"; };
+		9CCEF0D71CEE077E00B874A6 /* XHAlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumListViewController.m; sourceTree = "<group>"; };
+		9CCEF0D91CEE08C400B874A6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9CCEF0DA1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XHExtension.h"; sourceTree = "<group>"; };
+		9CCEF0DB1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XHExtension.m"; sourceTree = "<group>"; };
+		9CCEF0DD1CEE0EC900B874A6 /* XHAlbumListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAlbumListViewCell.h; sourceTree = "<group>"; };
+		9CCEF0DE1CEE0EC900B874A6 /* XHAlbumListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAlbumListViewCell.m; sourceTree = "<group>"; };
+		9CCEF0E01CEE12DA00B874A6 /* XHPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoViewController.h; sourceTree = "<group>"; };
+		9CCEF0E11CEE12DA00B874A6 /* XHPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CAEBAFC1CECA19E00A2714B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB151CECA19E00A2714B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB201CECA19E00A2714B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CAEBAF61CECA19E00A2714B = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB011CECA19E00A2714B /* PickImage Demo */,
+				9CAEBB1B1CECA19E00A2714B /* PickImage DemoTests */,
+				9CAEBB001CECA19E00A2714B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CAEBB001CECA19E00A2714B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBAFF1CECA19E00A2714B /* PickImage Demo.app */,
+				9CAEBB181CECA19E00A2714B /* PickImage DemoTests.xctest */,
+				9CAEBB231CECA19E00A2714B /* PickImage DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CAEBB011CECA19E00A2714B /* PickImage Demo */ = {
+			isa = PBXGroup;
+			children = (
+				9CCEF0D21CEE01F100B874A6 /* Lib */,
+				9CCEF0D11CEE01E300B874A6 /* Categary */,
+				9CAEBB051CECA19E00A2714B /* AppDelegate.h */,
+				9CAEBB061CECA19E00A2714B /* AppDelegate.m */,
+				9CCEF0D31CEE026600B874A6 /* XHNavigationController.h */,
+				9CCEF0D41CEE026600B874A6 /* XHNavigationController.m */,
+				9CAEBB081CECA19E00A2714B /* XHBackgroundViewController.h */,
+				9CAEBB091CECA19E00A2714B /* XHBackgroundViewController.m */,
+				9CCEF0D61CEE077E00B874A6 /* XHAlbumListViewController.h */,
+				9CCEF0D71CEE077E00B874A6 /* XHAlbumListViewController.m */,
+				9CCEF0DD1CEE0EC900B874A6 /* XHAlbumListViewCell.h */,
+				9CCEF0DE1CEE0EC900B874A6 /* XHAlbumListViewCell.m */,
+				9CCEF0E01CEE12DA00B874A6 /* XHPhotoViewController.h */,
+				9CCEF0E11CEE12DA00B874A6 /* XHPhotoViewController.m */,
+				9CA433451CEDAF1B00077481 /* pickImageView.h */,
+				9CA433461CEDAF1B00077481 /* pickImageView.m */,
+				9CAEBB261CECA19E00A2714B /* PickImage DemoUITests */,
+				9CAEBB021CECA19E00A2714B /* Supporting Files */,
+			);
+			path = "PickImage Demo";
+			sourceTree = "<group>";
+		};
+		9CAEBB021CECA19E00A2714B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB0E1CECA19E00A2714B /* Assets.xcassets */,
+				9CAEBB131CECA19E00A2714B /* Info.plist */,
+				9CAEBB031CECA19E00A2714B /* main.m */,
+				9CCEF0D91CEE08C400B874A6 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CAEBB1B1CECA19E00A2714B /* PickImage DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB1C1CECA19E00A2714B /* PickImage_DemoTests.m */,
+				9CAEBB1E1CECA19E00A2714B /* Info.plist */,
+			);
+			path = "PickImage DemoTests";
+			sourceTree = "<group>";
+		};
+		9CAEBB261CECA19E00A2714B /* PickImage DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB271CECA19E00A2714B /* PickImage_DemoUITests.m */,
+				9CAEBB291CECA19E00A2714B /* Info.plist */,
+			);
+			path = "PickImage DemoUITests";
+			sourceTree = SOURCE_ROOT;
+		};
+		9CAEBB371CECA63600A2714B /* SXphotoView */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB381CECA63600A2714B /* SXPickPhoto.h */,
+				9CAEBB391CECA63600A2714B /* SXPickPhoto.m */,
+				9CAEBB3A1CECA63600A2714B /* UIImage+FixOrientation.h */,
+				9CAEBB3B1CECA63600A2714B /* UIImage+FixOrientation.m */,
+			);
+			path = SXphotoView;
+			sourceTree = "<group>";
+		};
+		9CCEF0D11CEE01E300B874A6 /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				9CCEF0DA1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.h */,
+				9CCEF0DB1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m */,
+				9CAEBB3E1CECB2A600A2714B /* UIView+XHExtension.h */,
+				9CAEBB3F1CECB2A600A2714B /* UIView+XHExtension.m */,
+			);
+			name = Categary;
+			sourceTree = "<group>";
+		};
+		9CCEF0D21CEE01F100B874A6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9CAEBB371CECA63600A2714B /* SXphotoView */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CAEBAFE1CECA19E00A2714B /* PickImage Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CAEBB2C1CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage Demo" */;
+			buildPhases = (
+				9CAEBAFB1CECA19E00A2714B /* Sources */,
+				9CAEBAFC1CECA19E00A2714B /* Frameworks */,
+				9CAEBAFD1CECA19E00A2714B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PickImage Demo";
+			productName = "PickImage Demo";
+			productReference = 9CAEBAFF1CECA19E00A2714B /* PickImage Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CAEBB171CECA19E00A2714B /* PickImage DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CAEBB2F1CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage DemoTests" */;
+			buildPhases = (
+				9CAEBB141CECA19E00A2714B /* Sources */,
+				9CAEBB151CECA19E00A2714B /* Frameworks */,
+				9CAEBB161CECA19E00A2714B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CAEBB1A1CECA19E00A2714B /* PBXTargetDependency */,
+			);
+			name = "PickImage DemoTests";
+			productName = "PickImage DemoTests";
+			productReference = 9CAEBB181CECA19E00A2714B /* PickImage DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9CAEBB221CECA19E00A2714B /* PickImage DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CAEBB321CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage DemoUITests" */;
+			buildPhases = (
+				9CAEBB1F1CECA19E00A2714B /* Sources */,
+				9CAEBB201CECA19E00A2714B /* Frameworks */,
+				9CAEBB211CECA19E00A2714B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CAEBB251CECA19E00A2714B /* PBXTargetDependency */,
+			);
+			name = "PickImage DemoUITests";
+			productName = "PickImage DemoUITests";
+			productReference = 9CAEBB231CECA19E00A2714B /* PickImage DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CAEBAF71CECA19E00A2714B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Soso;
+				TargetAttributes = {
+					9CAEBAFE1CECA19E00A2714B = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RNH7425LD7;
+					};
+					9CAEBB171CECA19E00A2714B = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RNH7425LD7;
+						TestTargetID = 9CAEBAFE1CECA19E00A2714B;
+					};
+					9CAEBB221CECA19E00A2714B = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RNH7425LD7;
+						TestTargetID = 9CAEBAFE1CECA19E00A2714B;
+					};
+				};
+			};
+			buildConfigurationList = 9CAEBAFA1CECA19E00A2714B /* Build configuration list for PBXProject "PickImage Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CAEBAF61CECA19E00A2714B;
+			productRefGroup = 9CAEBB001CECA19E00A2714B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CAEBAFE1CECA19E00A2714B /* PickImage Demo */,
+				9CAEBB171CECA19E00A2714B /* PickImage DemoTests */,
+				9CAEBB221CECA19E00A2714B /* PickImage DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CAEBAFD1CECA19E00A2714B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAEBB0F1CECA19E00A2714B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB161CECA19E00A2714B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB211CECA19E00A2714B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CAEBAFB1CECA19E00A2714B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CCEF0D81CEE077E00B874A6 /* XHAlbumListViewController.m in Sources */,
+				9CA433471CEDAF1B00077481 /* pickImageView.m in Sources */,
+				9CAEBB3C1CECA63600A2714B /* SXPickPhoto.m in Sources */,
+				9CAEBB0A1CECA19E00A2714B /* XHBackgroundViewController.m in Sources */,
+				9CCEF0DC1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m in Sources */,
+				9CAEBB401CECB2A600A2714B /* UIView+XHExtension.m in Sources */,
+				9CCEF0DF1CEE0EC900B874A6 /* XHAlbumListViewCell.m in Sources */,
+				9CAEBB071CECA19E00A2714B /* AppDelegate.m in Sources */,
+				9CAEBB3D1CECA63600A2714B /* UIImage+FixOrientation.m in Sources */,
+				9CCEF0D51CEE026600B874A6 /* XHNavigationController.m in Sources */,
+				9CAEBB041CECA19E00A2714B /* main.m in Sources */,
+				9CCEF0E21CEE12DA00B874A6 /* XHPhotoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB141CECA19E00A2714B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAEBB1D1CECA19E00A2714B /* PickImage_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAEBB1F1CECA19E00A2714B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CAEBB281CECA19E00A2714B /* PickImage_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CAEBB1A1CECA19E00A2714B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CAEBAFE1CECA19E00A2714B /* PickImage Demo */;
+			targetProxy = 9CAEBB191CECA19E00A2714B /* PBXContainerItemProxy */;
+		};
+		9CAEBB251CECA19E00A2714B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CAEBAFE1CECA19E00A2714B /* PickImage Demo */;
+			targetProxy = 9CAEBB241CECA19E00A2714B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9CAEBB2A1CECA19E00A2714B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9CAEBB2B1CECA19E00A2714B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CAEBB2D1CECA19E00A2714B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "PickImage Demo/PrefixHeader.pch";
+				INFOPLIST_FILE = "PickImage Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9CAEBB2E1CECA19E00A2714B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "PickImage Demo/PrefixHeader.pch";
+				INFOPLIST_FILE = "PickImage Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9CAEBB301CECA19E00A2714B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "PickImage DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickImage Demo.app/PickImage Demo";
+			};
+			name = Debug;
+		};
+		9CAEBB311CECA19E00A2714B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "PickImage DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickImage Demo.app/PickImage Demo";
+			};
+			name = Release;
+		};
+		9CAEBB331CECA19E00A2714B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PickImage DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "PickImage Demo";
+			};
+			name = Debug;
+		};
+		9CAEBB341CECA19E00A2714B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "PickImage DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "PickImage Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CAEBAFA1CECA19E00A2714B /* Build configuration list for PBXProject "PickImage Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CAEBB2A1CECA19E00A2714B /* Debug */,
+				9CAEBB2B1CECA19E00A2714B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CAEBB2C1CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CAEBB2D1CECA19E00A2714B /* Debug */,
+				9CAEBB2E1CECA19E00A2714B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CAEBB2F1CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CAEBB301CECA19E00A2714B /* Debug */,
+				9CAEBB311CECA19E00A2714B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CAEBB321CECA19E00A2714B /* Build configuration list for PBXNativeTarget "PickImage DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CAEBB331CECA19E00A2714B /* Debug */,
+				9CAEBB341CECA19E00A2714B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CAEBAF71CECA19E00A2714B /* Project object */;
+}
