@@ -7,7 +7,6 @@
 //
 
 #import "XHBackgroundViewController.h"
-
 #import "SXPickPhoto.h"
 #import "pickImageView.h"
 #import "XHAlbumListViewController.h"
@@ -81,11 +80,11 @@ static NSInteger i = 0;
 //创建背景view
 - (void)createBackView{
 
-    self.navigationItem.title = @"PickImage Demo ---";
+    self.navigationItem.title = @"PickImage Demod";
     
     //背景view
     _backView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KSCREENWIDTH, KSCREENHEIGHT - 64)];
-    _backView.backgroundColor = [UIColor orangeColor];
+    _backView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview: _backView];
     
     //相机按钮
@@ -285,9 +284,6 @@ static NSInteger i = 0;
     return data;
 }
 
-
-
-
 -(UIImage*) OriginImage:(UIImage *)image scaleToSize:(CGSize)size{
 
     UIGraphicsBeginImageContext(size);
@@ -301,8 +297,6 @@ static NSInteger i = 0;
     return scaledImage;
     
 }
-
-
 
 -(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth
 {
@@ -319,9 +313,6 @@ static NSInteger i = 0;
     return newImage;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

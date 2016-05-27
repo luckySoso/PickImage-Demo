@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C175E0F1CF84C9400F87EAD /* XHPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C175E0E1CF84C9400F87EAD /* XHPhotoCollectionViewCell.m */; };
+		9C175E121CF84D6100F87EAD /* XHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C175E111CF84D6100F87EAD /* XHAsset.m */; };
+		9C9F08141CF203E70029687A /* XHPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F08131CF203E70029687A /* XHPhotoBrowserViewController.m */; };
 		9CA433471CEDAF1B00077481 /* pickImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA433461CEDAF1B00077481 /* pickImageView.m */; };
 		9CAEBB041CECA19E00A2714B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB031CECA19E00A2714B /* main.m */; };
 		9CAEBB071CECA19E00A2714B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAEBB061CECA19E00A2714B /* AppDelegate.m */; };
@@ -42,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C175E0D1CF84C9400F87EAD /* XHPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		9C175E0E1CF84C9400F87EAD /* XHPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		9C175E101CF84D6100F87EAD /* XHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHAsset.h; sourceTree = "<group>"; };
+		9C175E111CF84D6100F87EAD /* XHAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHAsset.m; sourceTree = "<group>"; };
+		9C9F08121CF203E70029687A /* XHPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		9C9F08131CF203E70029687A /* XHPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		9CA433451CEDAF1B00077481 /* pickImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickImageView.h; sourceTree = "<group>"; };
 		9CA433461CEDAF1B00077481 /* pickImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickImageView.m; sourceTree = "<group>"; };
 		9CAEBAFF1CECA19E00A2714B /* PickImage Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PickImage Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +111,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C175E0C1CF8489800F87EAD /* XHAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				9CCEF0D61CEE077E00B874A6 /* XHAlbumListViewController.h */,
+				9CCEF0D71CEE077E00B874A6 /* XHAlbumListViewController.m */,
+				9CCEF0DD1CEE0EC900B874A6 /* XHAlbumListViewCell.h */,
+				9CCEF0DE1CEE0EC900B874A6 /* XHAlbumListViewCell.m */,
+				9CCEF0E01CEE12DA00B874A6 /* XHPhotoViewController.h */,
+				9CCEF0E11CEE12DA00B874A6 /* XHPhotoViewController.m */,
+				9C175E0D1CF84C9400F87EAD /* XHPhotoCollectionViewCell.h */,
+				9C175E0E1CF84C9400F87EAD /* XHPhotoCollectionViewCell.m */,
+				9C175E101CF84D6100F87EAD /* XHAsset.h */,
+				9C175E111CF84D6100F87EAD /* XHAsset.m */,
+				9C9F08121CF203E70029687A /* XHPhotoBrowserViewController.h */,
+				9C9F08131CF203E70029687A /* XHPhotoBrowserViewController.m */,
+			);
+			name = XHAlbum;
+			sourceTree = "<group>";
+		};
 		9CAEBAF61CECA19E00A2714B = {
 			isa = PBXGroup;
 			children = (
@@ -132,12 +160,7 @@
 				9CCEF0D41CEE026600B874A6 /* XHNavigationController.m */,
 				9CAEBB081CECA19E00A2714B /* XHBackgroundViewController.h */,
 				9CAEBB091CECA19E00A2714B /* XHBackgroundViewController.m */,
-				9CCEF0D61CEE077E00B874A6 /* XHAlbumListViewController.h */,
-				9CCEF0D71CEE077E00B874A6 /* XHAlbumListViewController.m */,
-				9CCEF0DD1CEE0EC900B874A6 /* XHAlbumListViewCell.h */,
-				9CCEF0DE1CEE0EC900B874A6 /* XHAlbumListViewCell.m */,
-				9CCEF0E01CEE12DA00B874A6 /* XHPhotoViewController.h */,
-				9CCEF0E11CEE12DA00B874A6 /* XHPhotoViewController.m */,
+				9C175E0C1CF8489800F87EAD /* XHAlbum */,
 				9CA433451CEDAF1B00077481 /* pickImageView.h */,
 				9CA433461CEDAF1B00077481 /* pickImageView.m */,
 				9CAEBB261CECA19E00A2714B /* PickImage DemoUITests */,
@@ -343,10 +366,13 @@
 				9CCEF0DC1CEE0C7F00B874A6 /* UIBarButtonItem+XHExtension.m in Sources */,
 				9CAEBB401CECB2A600A2714B /* UIView+XHExtension.m in Sources */,
 				9CCEF0DF1CEE0EC900B874A6 /* XHAlbumListViewCell.m in Sources */,
+				9C175E0F1CF84C9400F87EAD /* XHPhotoCollectionViewCell.m in Sources */,
 				9CAEBB071CECA19E00A2714B /* AppDelegate.m in Sources */,
+				9C9F08141CF203E70029687A /* XHPhotoBrowserViewController.m in Sources */,
 				9CAEBB3D1CECA63600A2714B /* UIImage+FixOrientation.m in Sources */,
 				9CCEF0D51CEE026600B874A6 /* XHNavigationController.m in Sources */,
 				9CAEBB041CECA19E00A2714B /* main.m in Sources */,
+				9C175E121CF84D6100F87EAD /* XHAsset.m in Sources */,
 				9CCEF0E21CEE12DA00B874A6 /* XHPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "PickImage Demo/PrefixHeader.pch";
 				INFOPLIST_FILE = "PickImage Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "PickImage Demo/PrefixHeader.pch";
 				INFOPLIST_FILE = "PickImage Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "soso.PickImage-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

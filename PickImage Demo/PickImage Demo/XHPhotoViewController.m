@@ -7,7 +7,7 @@
 //
 
 #import "XHPhotoViewController.h"
-
+#import "XHPhotoCollectionViewCell.h"
 
 #define ITEM_MARGIN 2
 #define EDGE_MARGIN 10
@@ -17,7 +17,7 @@
 
 static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
 
-@interface XHPhotoViewController ()
+@interface XHPhotoViewController ()<UICollectionViewDataSource, UICollectionViewDelegate,XHPhotoCollectionViewCellDelegate>
 /*!
  @brief  显示group的所有照片的collectionView
  */
@@ -63,40 +63,69 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
     [self setNav];
     
     [self setupToolbar];
+    
+    [self.photosCollectionView registerClass:[XHPhotoCollectionViewCell class] forCellWithReuseIdentifier:photoCVCellReuseID];
 }
 
 - (void)setNav{
     self.navigationItem.title = @"相机照片";
     self.maxSelectedNo = 5;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+  
 
 }
 
 - (void)setupToolbar {
     
+    //下方选择的照片数label
     _selectedInfoLabel = [[UILabel alloc] init];
     CGFloat chooseInfoLabelW = 100;
     CGFloat chooseInfoLabelH = 44;
     CGFloat chooseInfoLabelX = (KSCREENWIDTH - chooseInfoLabelW) * 0.5;
     CGFloat chooseInfoLabelY = 0;
     _selectedInfoLabel.frame = CGRectMake(chooseInfoLabelX, chooseInfoLabelY, chooseInfoLabelW, chooseInfoLabelH);
+    
     [self updateActionToolbarInfo]; // 设置初始显示为 0/最大选择数
     _selectedInfoLabel.textColor = [UIColor blackColor];
     _selectedInfoLabel.textAlignment = NSTextAlignmentCenter;
-    [self.actionToolbar addSubview:_selectedInfoLabel];
+    [self.actionToolbar addSubview:_selectedInfoLabel];//底部照片操作的toolBar
     
+    //预览按钮
+    _preViewBtn = [self creatActionBtnWithX:EDGE_MARGIN title:@"预览" action:@selector(previewBtnClicked:)];
     
-    _preViewBtn = [self creatActionBtnWithX:EDGE_MARGIN
-                                      title:@"预览"
-                                     action:@selector(previewBtnClicked:)];
-    
+    //完成按钮
     CGFloat doneBtnX = KSCREENWIDTH - EDGE_MARGIN - _preViewBtn.frame.size.width;
-    _doneBtn = [self creatActionBtnWithX:doneBtnX
-                                   title:@"完成"
-                                  action:@selector(doneBtnClicked:)];
+ 
+    _doneBtn = [self creatActionBtnWithX:doneBtnX title:@"完成" action:@selector(doneBtnClicked:)];
+}
+#pragma mark - collection datesource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.assetArray.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    XHPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:photoCVCellReuseID
+                                                                                forIndexPath:indexPath];
+    
+    cell.photoCellDelegate = self;
+    
+    cell.asset = self.assetArray[indexPath.row];
+    
+    return cell;
+}
+
+
+//添加预览完成按钮 尺寸
 - (UIButton *)creatActionBtnWithX:(CGFloat)x title:(NSString *)title action:(SEL)action {
+    
     CGFloat preViewBtnX = x;
     CGFloat preViewBtnY = 0;
     CGFloat preViewBtnW = 60;
@@ -107,6 +136,7 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setEnabled:NO];
     
+   
     [self.actionToolbar addSubview:btn];
     
     return btn;
@@ -117,10 +147,38 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
  @brief  更新ActionToolbar中按钮的状态
  */
 - (void)updateActionToolbarInfo {
+    
     self.selectedInfoLabel.text = [NSString stringWithFormat:@"(%zd/%zd)", self.selectedAssetArrayM.count, self.maxSelectedNo];
     _selectedInfoLabel.textColor = (self.selectedAssetArrayM.count == self.maxSelectedNo) ? [UIColor redColor] : [UIColor blackColor];
     _preViewBtn.enabled = self.selectedAssetArrayM.count ? YES : NO;
     _doneBtn.enabled = self.selectedAssetArrayM.count ? YES : NO;
+}
+
+
+#pragma mark - 按钮的action
+- (void)previewBtnClicked:(UIButton *)previewBtn {
+    
+//    YSPhotoBrowserViewController *photoBrowserVC = [[YSPhotoBrowserViewController alloc] init];
+//    photoBrowserVC.assetsArray = self.selectedAssetArrayM.copy;
+//    photoBrowserVC.maxSelectedNo = self.maxSelectedNo;
+//    
+//    __weak typeof(self) weakSelf = self;
+//    photoBrowserVC.photoBrowserVCHandler = ^(NSArray *assetArray){
+//        [weakSelf handleData:assetArray];
+//    };
+//    
+//    [self showViewController:photoBrowserVC sender:nil];
+}
+
+
+- (void)doneBtnClicked:(UIButton *)previewBtn {
+    NSLog(@"%s", __func__);
+    
+    if (self.photoVCHandler) {
+        self.photoVCHandler(self.selectedAssetArrayM.copy);
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -162,6 +220,11 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
 }
 
 
+
+
+
+
+#pragma mark 懒加载
 - (NSArray *)assetArray {
     if (!_assetArray) {
         _assetArray = [NSArray array];

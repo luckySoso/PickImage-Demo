@@ -84,11 +84,11 @@ static NSString *const albumCellReuseID = @"albumCellReuseID";
                 //[weakSelf.albumArrayM insertObject:group atIndex:0];
                 [weakSelf.albumArrayM addObject:group];
                 
-                NSLog(@"%@", [group valueForProperty:ALAssetsGroupPropertyName]);
+                NSLog(@"获取到的相簿名：%@", [group valueForProperty:ALAssetsGroupPropertyName]);
             }
             
         } failureBlock:^(NSError *error) {
-            NSLog(@"获取相簿失败%@", error);
+            NSLog(@"获取相簿失败：%@", error);
         }];
     }];
     
@@ -125,6 +125,7 @@ static NSString *const albumCellReuseID = @"albumCellReuseID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //点击相册跳转到photoViewController
     ALAssetsGroup *group = self.albumArrayM[indexPath.row];
     
     XHPhotoViewController *photoVC = [[XHPhotoViewController alloc] init];
