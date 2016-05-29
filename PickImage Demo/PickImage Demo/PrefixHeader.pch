@@ -12,8 +12,7 @@
 #import "UIView+XHExtension.h"
 #import "UIBarButtonItem+XHExtension.h"
 
-#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
-#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

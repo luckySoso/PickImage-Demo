@@ -10,7 +10,10 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "XHAlbumListViewCell.h"
 #import "XHPhotoViewController.h"
+#import "XHAsset.h"
 
+#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 static NSString *const albumCellReuseID = @"albumCellReuseID";
 
 @interface XHAlbumListViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -77,6 +80,9 @@ static NSString *const albumCellReuseID = @"albumCellReuseID";
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
     NSBlockOperation *enumOp = [NSBlockOperation blockOperationWithBlock:^{
         
+        
+
+        
         [self.assetslibrary enumerateGroupsWithTypes:ALAssetsGroupAll usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
             
             if (group) {
@@ -134,6 +140,28 @@ static NSString *const albumCellReuseID = @"albumCellReuseID";
     
     photoVC.photoVCHandler = ^(NSArray *selectedImgsArray){
         NSLog(@"%@------", selectedImgsArray);
+        
+        
+        for ( NSInteger i = 0; i<selectedImgsArray.count; i++) {
+            
+            XHAsset *asset = selectedImgsArray[i];
+       
+            // 使用asset来获取本地图片
+            ALAssetRepresentation *assetRep = [asset.asset defaultRepresentation];
+            CGImageRef imgRef = [assetRep fullResolutionImage];
+            UIImage *image = [UIImage imageWithCGImage:imgRef
+                                                      scale:1.0
+                                                orientation:UIImageOrientationUp];
+            NSLog(@"%@",NSStringFromCGSize(image.size));
+            
+            NSData *data=UIImageJPEGRepresentation(image, 1.0);
+            NSLog(@"....%ld",data.length/1024);
+            
+        }
+        
+        
+        
+        
     };
     
     [self.navigationController pushViewController:photoVC animated:YES];

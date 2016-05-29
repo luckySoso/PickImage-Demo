@@ -11,9 +11,10 @@
 #import "pickImageView.h"
 #import "XHAlbumListViewController.h"
 #import "XHNavigationController.h"
+#import "TZImagePickerController.h"
 
-
-
+#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 #define margin  (KSCREENWIDTH - 4 * 60) / 5
 
 
@@ -85,14 +86,20 @@ static NSInteger i = 0;
     //背景view
     _backView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, KSCREENWIDTH, KSCREENHEIGHT - 64)];
     _backView.backgroundColor = [UIColor lightGrayColor];
+    
     [self.view addSubview: _backView];
     
     //相机按钮
+//    _photoBtn = [[UIButton alloc] initWithFrame:CGRectMake(margin, 20, 60, 60)];
+//    [_photoBtn setBackgroundImage:[UIImage imageNamed:@"photo"] forState:UIControlStateNormal];
+//    [_photoBtn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchDown];
+//    //_photoBtn.backgroundColor = [UIColor redColor];
+//    [_backView addSubview:_photoBtn];
+
     UIButton *photoBtn = [[UIButton alloc] initWithFrame:CGRectMake(margin, 20, 60, 60)];
-    [photoBtn setBackgroundImage:[UIImage imageNamed:@"photo"] forState:UIControlStateNormal];
+    [photoBtn setBackgroundImage:[UIImage imageNamed:@"photo.jpg"] forState:UIControlStateNormal];
     [photoBtn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchDown];
     [_backView addSubview:photoBtn];
-    _photoBtn = photoBtn;
     
     //相机对象
     _pickPhoto = [[SXPickPhoto alloc] init];
@@ -110,6 +117,34 @@ static NSInteger i = 0;
     
     [self methodTwo];
     
+    //[self methodThree];
+}
+
+
+- (void)methodThree{
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+   
+
+    // You can get the photos by block, the same as by delegate.
+    // 你可以通过block或者代理，来得到用户选择的照片.
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        
+    }];
+    
+    // Set the appearance
+    // 在这里设置imagePickerVc的外观
+    //imagePickerVc.navigationBar.barTintColor = [UIColor whiteColor];
+    // imagePickerVc.oKButtonTitleColorDisabled = [UIColor lightGrayColor];
+    // imagePickerVc.oKButtonTitleColorNormal = [UIColor greenColor];
+    
+    // Set allow picking video & photo & originalPhoto or not
+    // 设置是否可以选择视频/图片/原图
+    // imagePickerVc.allowPickingVideo = NO;
+    // imagePickerVc.allowPickingImage = NO;
+    // imagePickerVc.allowPickingOriginalPhoto = NO;
+    
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+
 }
 
 #pragma mark method two
@@ -137,7 +172,7 @@ static NSInteger i = 0;
             
             //拿到拍到的照片
             UIImage *image = (UIImage *)Data;
-            NSData *imgData = UIImageJPEGRepresentation(image, 1.0);
+            //NSData *imgData = UIImageJPEGRepresentation(image, 1.0);
             
             //存入系统相册
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);

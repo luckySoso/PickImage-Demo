@@ -44,8 +44,8 @@
     
     UIButton *kCheckButton = [[UIButton alloc] init];
     [kCheckButton setAdjustsImageWhenHighlighted:NO];
-    [kCheckButton setBackgroundImage:[self getBundleImgWithImageName:@"check_button_normal"] forState:UIControlStateNormal];
-    [kCheckButton setBackgroundImage:[self getBundleImgWithImageName:@"check_button_selected"] forState:UIControlStateSelected];
+    [kCheckButton setBackgroundImage:[UIImage imageNamed:@"check_button_normal"] forState:UIControlStateNormal];
+    [kCheckButton setBackgroundImage:[UIImage imageNamed:@"check_button_selected"]forState:UIControlStateSelected];
     [kCheckButton addTarget:self action:@selector(changeCheckBtnStatus:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.contentView addSubview:kCheckButton];
@@ -63,13 +63,13 @@
 }
 
 
-- (UIImage *)getBundleImgWithImageName:(NSString *)imgName {
-    NSBundle *multiChooseAlbumBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle]  pathForResource:@"YSMultiChooseAlbum"
-                                                                                                 ofType:@"bundle"]];
-    NSString *normalImgPath = [multiChooseAlbumBundle pathForResource:imgName ofType:@"png"];
-    
-    return [UIImage imageWithContentsOfFile:normalImgPath];
-}
+//- (UIImage *)getBundleImgWithImageName:(NSString *)imgName {
+//    NSBundle *multiChooseAlbumBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle]  pathForResource:@"YSMultiChooseAlbum"
+//                                                                                                 ofType:@"bundle"]];
+//    NSString *normalImgPath = [multiChooseAlbumBundle pathForResource:imgName ofType:@"png"];
+//    
+//    return [UIImage imageWithContentsOfFile:normalImgPath];
+//}
 
 
 - (void)setupSubviewsLayout {

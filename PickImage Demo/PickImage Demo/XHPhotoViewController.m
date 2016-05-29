@@ -8,12 +8,16 @@
 
 #import "XHPhotoViewController.h"
 #import "XHPhotoCollectionViewCell.h"
+#import "XHAsset.h"
+#import "XHPhotoBrowserViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 #define ITEM_MARGIN 2
 #define EDGE_MARGIN 10
 
 #define LINE_ITEM_NUMBER 4
-
+#define KSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define KSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 
 static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
 
@@ -71,9 +75,6 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
     self.navigationItem.title = @"相机照片";
     self.maxSelectedNo = 5;
     self.view.backgroundColor = [UIColor whiteColor];
-    
-  
-
 }
 
 - (void)setupToolbar {
@@ -99,8 +100,11 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
  
     _doneBtn = [self creatActionBtnWithX:doneBtnX title:@"完成" action:@selector(doneBtnClicked:)];
 }
-#pragma mark - collection datesource
 
+
+
+
+#pragma mark - collection datesource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
@@ -120,6 +124,58 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
     cell.asset = self.assetArray[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - delegate method
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    XHPhotoBrowserViewController *photoBrowserVC = [[XHPhotoBrowserViewController alloc] init];
+    
+    photoBrowserVC.assetsArray = self.assetArray;
+    photoBrowserVC.maxSelectedNo = self.maxSelectedNo;
+    photoBrowserVC.currentIndexPath = indexPath;
+    
+    __weak typeof(self) weakSelf = self;
+    photoBrowserVC.photoBrowserVCHandler = ^(NSArray *assetArray){
+        [weakSelf handleData:assetArray];
+    };
+    
+    [self showViewController:photoBrowserVC sender:nil];
+    
+
+}
+
+
+
+// XHPhotoCollectionViewCell delegate method
+- (void)photoCollectionViewCell:(XHPhotoCollectionViewCell *)cell clickCheckBtn:(UIButton *)checkBtn {
+    if (self.selectedAssetArrayM.count >= self.maxSelectedNo && !checkBtn.selected) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"最多只能选择%zd个", self.maxSelectedNo]
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+        
+    } else {
+        NSIndexPath *indexPath = [self.photosCollectionView indexPathForCell:cell];
+        XHAsset *asset = self.assetArray[indexPath.row];
+        
+        if (!checkBtn.selected) {
+            [self.selectedAssetArrayM addObject:asset];
+        } else {
+            [self.selectedAssetArrayM removeObject:asset];
+        }
+        
+        asset.isSelected = !asset.isSelected;
+        [self.photosCollectionView reloadItemsAtIndexPaths:@[indexPath]];
+        
+        // 更新标签
+        [self updateActionToolbarInfo];
+    }
+    
+    
 }
 
 
@@ -156,21 +212,45 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
 
 
 #pragma mark - 按钮的action
-- (void)previewBtnClicked:(UIButton *)previewBtn {
+- (void)handleData:(NSArray *)assetArray {
+    __weak typeof(self) weakSelf = self;
+    [assetArray enumerateObjectsUsingBlock:^(XHAsset *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSUInteger index = [weakSelf.assetArray indexOfObject:obj];
+        XHAsset *asset = weakSelf.assetArray[index];
+        asset.isSelected = obj.isSelected;
+        
+        // 如果obj不在selectedAssetArrayM数组中, 同时obj是选中的状态, 则添加到selectedAssetArrayM中
+        // 如果obj在selectedAssetArrayM数组中, 但是obj是不是选中的状态, 则将obj从selectedAssetArrayM中移除
+        if ([weakSelf.selectedAssetArrayM indexOfObject:obj] == NSNotFound && obj.isSelected) {
+            [weakSelf.selectedAssetArrayM addObject:asset];
+            
+        } else if ([weakSelf.selectedAssetArrayM indexOfObject:obj] != NSNotFound && !obj.isSelected) {
+            [weakSelf.selectedAssetArrayM removeObject:asset];
+        }
+        
+    }];
     
-//    YSPhotoBrowserViewController *photoBrowserVC = [[YSPhotoBrowserViewController alloc] init];
-//    photoBrowserVC.assetsArray = self.selectedAssetArrayM.copy;
-//    photoBrowserVC.maxSelectedNo = self.maxSelectedNo;
-//    
-//    __weak typeof(self) weakSelf = self;
-//    photoBrowserVC.photoBrowserVCHandler = ^(NSArray *assetArray){
-//        [weakSelf handleData:assetArray];
-//    };
-//    
-//    [self showViewController:photoBrowserVC sender:nil];
+    [weakSelf.photosCollectionView reloadData];
+    [weakSelf updateActionToolbarInfo];
+    
 }
 
+//预览按钮
+- (void)previewBtnClicked:(UIButton *)previewBtn {
+    
+    XHPhotoBrowserViewController *photoBrowserVC = [[XHPhotoBrowserViewController alloc] init];
+    photoBrowserVC.assetsArray = self.selectedAssetArrayM.copy;
+    photoBrowserVC.maxSelectedNo = self.maxSelectedNo;
+    
+    __weak typeof(self) weakSelf = self;
+    photoBrowserVC.photoBrowserVCHandler = ^(NSArray *assetArray){
+        [weakSelf handleData:assetArray];
+    };
+    
+    [self showViewController:photoBrowserVC sender:nil];
+}
 
+//完成按钮
 - (void)doneBtnClicked:(UIButton *)previewBtn {
     NSLog(@"%s", __func__);
     
@@ -179,6 +259,21 @@ static NSString *const photoCVCellReuseID = @"photoCVCellReuseID";
     }
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma set data
+
+- (void)setGroup:(ALAssetsGroup *)group {
+    __block NSMutableArray *assetArrayM = [NSMutableArray array];
+    [group enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {     // 遍历获取缩略图
+        if (result) {
+            XHAsset *assert = [XHAsset assetWithAsset:result];  // 将 ALAsset 转换成 YSAsset
+            [assetArrayM insertObject:assert atIndex:0];
+        }
+        
+    }];
+    
+    self.assetArray = assetArrayM.copy;
 }
 
 
